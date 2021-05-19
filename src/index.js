@@ -12,11 +12,13 @@ class QuizTime extends Component{
   };
 
   computeResult(answer,correctAnswer) {
-    if(answer === correctAnswer)
+    let isCorrect = (answer === correctAnswer);
+    if(isCorrect)
       this.setState({
         score: this.state.score + 1
       });
     this.setState({responses: this.state.responses + 1});
+    return isCorrect;
   }
 
   render(){

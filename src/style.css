@@ -4,6 +4,7 @@
   font-family: "Raleway", sans-serif;
 }
 
+
 .container {
   position: absolute;
   width: 1024px;
@@ -58,6 +59,13 @@
   cursor: pointer;
 }
 
+.greenBtn {
+  background-color: green;
+}
+
+.redBtn {
+  background-color: red;
+}
 .score-board {
   position: relative;
   height: 700px;
