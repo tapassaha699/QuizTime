@@ -1,9 +1,12 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import "./style.css";
-import qBank from "./questionBank";
+
 import QuestionBox from "./components/questionBox"
 import Result from "./components/Result"
+
+import qBank from "./questionBank";
+import "./style.css";
+
 
 class QuizTime extends Component{
   state = {
@@ -12,18 +15,24 @@ class QuizTime extends Component{
   };
 
   computeResult(answer,correctAnswer) {
-    let isCorrect = (answer === correctAnswer);
-    if(isCorrect)
-      this.setState({
-        score: this.state.score + 1
-      });
-    this.setState({responses: this.state.responses + 1});
-    return isCorrect;
+      let isCorrect = (answer === correctAnswer);
+
+      if(isCorrect)
+        this.setState({
+          score: this.state.score + 1
+        });
+
+      this.setState({responses: this.state.responses + 1});
+      
+      return isCorrect;
+
   }
 
   render(){
+
     return (
       <div className="container">
+
         <div className="title"> QuizTime </div>
 
         {
@@ -38,8 +47,10 @@ class QuizTime extends Component{
         }
 
         {this.state.responses === 5 ? <Result score={this.state.score} /> : null}
+
       </div>
     )
+
   }
 }
 
